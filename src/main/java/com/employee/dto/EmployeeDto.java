@@ -31,4 +31,5 @@ public class EmployeeDto {
 	
 	private Timestamp createdOn;
 	
+	private Timestamp updatedOn;
 }
