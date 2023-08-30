@@ -1,5 +1,6 @@
 package com.employee.entity;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 import jakarta.persistence.Entity;
@@ -11,22 +12,25 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 @Entity
 @Table(name = "emp_management")
-public class EmployeeManagment {
+public class EmployeeManagment implements Serializable{
 					
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2250332995120466525L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	private String firstNmae;
+	private String firstName;
 	
 	private String  lastName;
 	
@@ -43,4 +47,6 @@ public class EmployeeManagment {
 	private Timestamp createdOn;
 	
 	private Timestamp updatedOn;
+	
+	private Double salary;
 }

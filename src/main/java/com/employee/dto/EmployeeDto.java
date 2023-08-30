@@ -2,6 +2,10 @@ package com.employee.dto;
 
 import java.sql.Timestamp;
 
+import org.springframework.beans.BeanUtils;
+
+import com.employee.entity.EmployeeManagment;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,10 +16,14 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EmployeeDto {
+	
+	public EmployeeDto(EmployeeManagment employeeManagment) {
+		BeanUtils.copyProperties(employeeManagment, this);
+	}
 
     private long id;
 	
-	private String firstNmae;
+	private String firstName;
 	
 	private String  lastName;
 	
@@ -32,4 +40,8 @@ public class EmployeeDto {
 	private Timestamp createdOn;
 	
 	private Timestamp updatedOn;
+	
+	private Double salary;
+	
 }
+
