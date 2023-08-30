@@ -15,14 +15,16 @@ public class EmployeeMapper {
 		}	
 		EmployeeDto employeeDto=new EmployeeDto();
 		employeeDto.setId(employeeManagment.getId());
-		employeeDto.setFirstNmae(employeeManagment.getFirstNmae());
+		employeeDto.setFirstName(employeeManagment.getFirstName());
 		employeeDto.setLastName(employeeManagment.getLastName());
-		employeeDto.setEmail(employeeDto.getEmail());
-		employeeDto.setCity(employeeDto.getCity());
+		employeeDto.setEmail(employeeManagment.getEmail());
+		employeeDto.setCity(employeeManagment.getCity());
 		employeeDto.setAddress(employeeManagment.getAddress());
 		employeeDto.setContact(employeeManagment.getContact());
 		employeeDto.setIsActive(employeeManagment.getIsActive());
 		employeeDto.setCreatedOn(employeeManagment.getCreatedOn());
+		employeeDto.setUpdatedOn(employeeManagment.getUpdatedOn());
+		employeeDto.setSalary(employeeManagment.getSalary());
 		
 		return employeeDto;
 	}
@@ -33,7 +35,7 @@ public class EmployeeMapper {
 		}
 		EmployeeManagment managment = new EmployeeManagment();
 		managment.setId(employeeDto.getId());
-		managment.setFirstNmae(employeeDto.getFirstNmae());
+		managment.setFirstName(employeeDto.getFirstName());
 		managment.setLastName(employeeDto.getLastName());
 		managment.setEmail(employeeDto.getEmail());
 		managment.setCity(employeeDto.getCity());
@@ -41,7 +43,8 @@ public class EmployeeMapper {
 		managment.setContact(employeeDto.getContact());
 		managment.setIsActive(employeeDto.getIsActive());
 		managment.setCreatedOn(employeeDto.getCreatedOn());
-		
+		managment.setUpdatedOn(employeeDto.getUpdatedOn());	
+		managment.setSalary(employeeDto.getSalary());
 		return managment;
 	}
 }
